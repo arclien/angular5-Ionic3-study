@@ -1,7 +1,6 @@
 # angular5-study
 
 ## Lists
-
 - Typescript & ES6 Javascript.
   - [Quickstart 정리문서](https://docs.google.com/document/d/1F4xYbzDvnWzuLeVn6yTZ4ZuuQwsBP4InCjNWEEHWP2o/edit)
 - Components & Binding
@@ -25,3 +24,15 @@
 - Testing
 
 - Packaging & Releasing
+
+## References
+- [Differnece between Directives and Components](https://blog.angular-university.io/angular-components-and-directives-for-beginners/)
+
+So it looks like the browser has this built-in feature that seems very useful for creating new HTML elements from existing ones. Using it we can:
+
+- define a public XML-like API to an element of the page
+- define the look and feel of the element using HTML
+- we can add behavior to that new element
+- we can even style it while keeping those styles isolated
+
+This combined specification of a look and feel, an API and a behavior is a useful concept, so let's give it a name: let's call it a Directive. This new directive will be a very particular type of HTML Directive: more than behavior, it has also an associated look and feel. We will call to that type of Directive a Component - it's simply a Directive with a template.
