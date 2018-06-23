@@ -38,6 +38,14 @@ So it looks like the browser has this built-in feature that seems very useful fo
 This combined specification of a look and feel, an API and a behavior is a useful concept, so let's give it a name: let's call it a Directive. This new directive will be a very particular type of HTML Directive: more than behavior, it has also an associated look and feel. We will call to that type of Directive a Component - it's simply a Directive with a template.
 
 
+
+We’ve touched on a few directives already, such as NgFor.
+Directives are components without a view. They are components without a template. Or to put it another way, components are directives with a view.
+				
+Everything you can do with a directive you can also do with a component. But not everything you can do with a component you can do with a directive.
+
+
+
 - [Decorators](https://toddmotto.com/angular-decorators)
   - [decorators](https://angular-2-training-book.rangle.io/v/v2.3/handout/features/decorators.html)
   - [property_decorators](https://angular-2-training-book.rangle.io/v/v2.3/handout/features/property_decorators.html)
