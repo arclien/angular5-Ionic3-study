@@ -6,9 +6,10 @@
 - Components & Binding
   - [Components 정리문서](https://docs.google.com/document/d/1JzgW9L9SMTE2CN896pu4QQlBQiDq_E5NI49GANLgWJE/edit)
 - Directives
-
+  - [Built-in 정리문서](https://docs.google.com/document/d/16xiGaH4VFyYN_FVsJ6Q1gWb2UMYxvOFQegUtvlD-CQI/edit)
+  - [Custom 정리문서](https://docs.google.com/document/d/12RrV8NiKb7ZhpDjPSqOEYrShzxjVvdNJvo8-HvkYXeU/edit)
 - Dependency Injection & Services
-
+	
 - Angular Modules & Bootstrapping your Angular application.
 
 - SPAs & Routing
