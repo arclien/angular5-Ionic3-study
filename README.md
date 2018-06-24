@@ -53,3 +53,7 @@ Everything you can do with a directive you can also do with a component. But not
   - [property_decorators](https://angular-2-training-book.rangle.io/v/v2.3/handout/features/property_decorators.html)
   - [class_decorators](https://angular-2-training-book.rangle.io/v/v2.3/handout/features/class_decorators.html)
   - [parameter_decorators](https://angular-2-training-book.rangle.io/v/v2.3/handout/features/parameter_decorators.html)
+  
+## 한국말 참고자료
+- [Poiemaweb](https://poiemaweb.com/angular-basics)
+- [Angular 강좌](https://moon9342.github.io/angular-lecture-introduction)
