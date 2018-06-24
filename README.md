@@ -19,13 +19,14 @@
 - Forms
 
 - Reactive Programming with RXJs
-
+	- [RXJs 정리문서](https://docs.google.com/document/d/1lq_4U1hR_ajTVqL4wTgX4-0Y4bPm4rH7G-HGJpGky1o/edit)
 - HTTP
 
 - Testing
 
 - Packaging & Releasing
-
+- Pipes
+	- [Pipe 정리문서](https://docs.google.com/document/d/1sJKgD2DZwDjUViEulWKwTYmjHc9wSLzaDj8d8qHLyls/edit)
 ## References
 - [Differnece between Directives and Components](https://blog.angular-university.io/angular-components-and-directives-for-beginners/)
 
