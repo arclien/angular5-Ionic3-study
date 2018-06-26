@@ -134,3 +134,42 @@ NavController은 push/pop을 통해 페이지의 life cycle과 관련된 이벤�
   - 페이지가 삭제되기 전 호출
 
 * homePage에서 nextPage로 이동했다가, 백 버튼을 통해 다시 homePage로 이동하면, 처음과 달리 homePage는 메모리에 남아있는 상태로 nextPage로 갔었기 때문에 ionViewDidLoad는 호출되지 않는다. 반면 nextPage에서 백 버튼으로 나올 때는 pop함수로 메모리에서 nextPage가 삭제되어 ionViewWillUnload가 호출되어 메모리에 남아있지 않게된다.
+
+## Tabs Components
+tabs는 하나의 페이지에 여러 페이지가 포함되고 tab button을 통해 각 페이지로 이동하는 컴포넌트이다.
+Tabs페이지에 종속된 페이지들은 부모, 자식 관계이다.
+
+```
+tabs.ts
+...
+import { AboutPage } from '../about/about';
+import { ContactPage } from '../contact/contact';
+import { HomePage } from '../home/home';
+
+@Component({
+  templateUrl: 'tabs.html'
+})
+export class TabsPage{
+  tab1Root = HomePage;
+  tab2Root = AboutPage;
+  tab3Root = ContactPage;
+  constructor(){
+  
+  }
+}
+```
+
+기본적으로 탭 버튼 클릭으로 페이지를 이동하나, 버튼 클릭 없이 함수 호출로 이동할 수도 있다.
+
+```
+home.ts
+
+export class HomePage{
+  constructor(public navCtrl: NavController){
+  }
+  moveToMorePage(){
+    this.navCtrl.parent.select(3);
+  }
+}
+```
+
