@@ -9,3 +9,18 @@
 모든 페이지에서 가져와서 사용하면 해결이 된다. 이 때 사용하는 기능이 Provider이다.
 
 Provider는 말 그대로 제공자이다. 다른 객체들이 같이 사용하는 단 하나의 객체가 필요할 때 이를 싱글톤인 Provider로 정의할 수 있다.
+
+```
+app.module.ts
+...
+entryComponents: [
+  MyApp
+],
+providers: [
+  StatusBar,
+  SplashScreen,
+  MyCustomProvider,
+]
+...
+
+```
