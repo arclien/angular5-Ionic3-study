@@ -132,3 +132,5 @@ NavController은 push/pop을 통해 페이지의 life cycle과 관련된 이벤�
 
 - ionViewWillUnload()
   - 페이지가 삭제되기 전 호출
+
+* homePage에서 nextPage로 이동했다가, 백 버튼을 통해 다시 homePage로 이동하면, 처음과 달리 homePage는 메모리에 남아있는 상태로 nextPage로 갔었기 때문에 ionViewDidLoad는 호출되지 않는다. 반면 nextPage에서 백 버튼으로 나올 때는 pop함수로 메모리에서 nextPage가 삭제되어 ionViewWillUnload가 호출되어 메모리에 남아있지 않게된다.
