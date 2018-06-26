@@ -78,3 +78,57 @@ home.html
 
 모든 앱에서 공통으로 사용되는 작업이나 데이터에 대해 provider를 통해 코드의 재사용상을 높이고 코드 관리를 쉽게 할 수 있다.
 특히 data consistency가 된다.
+
+
+## NavController
+page는 NavController객체를 constructor에서 파라미터로 받을 수 있다.
+NavController은 페이지의 history를 관리하며 페이지 객체의 array로 구성.
+페이지 이동은 push,pop을 통해 이루어짐.
+
+```
+next.ts
+@component({
+  selector: 'page-next',
+  templateUrl: 'next.html',
+})
+
+export class NextPage {
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams
+   ){}
+   
+   moveToPrevPage(){
+    this.navCtrl.pop();
+   }
+ ...
+ 
+}
+```
+
+NavController은 push/pop을 통해 페이지의 life cycle과 관련된 이벤트를 발생시킨다.
+
+### 기본 life cycle 이벤트
+- ionViewCanEnter()
+  - page의 constructor이후 호출. 페이지가 보여지기 전 페이지 진입 가능 여부 확인 가능.
+  
+- ionViewDidLoad()
+  - page Load될 때 불리는 함수. 페이지 초기화 코드 정의. page constructor에서는 컴포넌트들이 생성되기 전이나, 여기에서는 이미 컴포넌트들이 생성되어 참조 가능하다.
+  
+- ionViewWillEnter()
+  - 페이지가 보여지기 전 호출
+  
+- ionViewDidEnter()
+  - 페이지가 보여진 후 호출
+  
+- ionViewCanLeave()
+  - 페이지가 사라지기 전에 나갈 수 있는지 확인 가능.
+  
+- ionViewWillLeave()
+  - 페이지가 가려지기 전 호출
+
+- ionViewDidLeave()
+  - 페이지가 가려진 후 호출
+
+- ionViewWillUnload()
+  - 페이지가 삭제되기 전 호출
