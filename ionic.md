@@ -235,4 +235,49 @@ export class NextPage{
 
 2.push한 페이지에서 pop을 통해 되돌아 가면서 파라미터를 넘기는 경우
 
+```
+home.ts
 
+export class HomePage{
+  password:string="";
+  
+  constructor(
+    public navCtrl: NavController,
+    private ngZone: NgZone
+  ){}
+  
+  callbackFunc = (_params) => {
+    return new Promise(( resolve, reject ) => {
+      for( var i=0; i< _params.length; i++ ){
+        this.password += _params[i].toString();
+      }
+      resolve();
+    });
+  }
+  
+  getPassword(){
+    this.navCtrl.push( PasswordPage, {callback:this.callbackFunc});
+  }
+
+}
+```
+
+*promise를 잘 사용하자
+```
+functionName(...){
+  return new Promise( resolve, reject ) => {
+    ...
+     resolve(params); // 함수가 성공적으로 수행된 경우
+    ...
+     reject(err); // 함수 실패한 경우
+  
+ }
+ 
+ functiomnName(...).then( (params) => {
+  //함수 성공된 경우
+ }, (err)=> {
+  //함수 실패 경우
+ })
+ 
+ ```
+ 
