@@ -145,6 +145,7 @@ tabs.ts
 import { AboutPage } from '../about/about';
 import { ContactPage } from '../contact/contact';
 import { HomePage } from '../home/home';
+import { MorePage } from '../more/more';
 
 @Component({
   templateUrl: 'tabs.html'
@@ -153,6 +154,8 @@ export class TabsPage{
   tab1Root = HomePage;
   tab2Root = AboutPage;
   tab3Root = ContactPage;
+  tab4Root = MorePage;
+  
   constructor(){
   
   }
@@ -172,4 +175,36 @@ export class HomePage{
   }
 }
 ```
+
+새로 이동한 morePage에서 한번 더 navController을 통해 tabs가 없는 nextPage로 가기위해서는
+기존의 방식인 this.navCtrl에 푸쉬를 하면 안되고( 하단 tabs가 유지됨 ) this.app.getRootNavs()[0].push를 사용해야지 하단 tabs가 없는 페이지로 이동을 한다.
+```
+more.ts
+
+export class MorePage{
+
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    private app: App
+  )
+  
+  // 하단 tabs를 유지한다
+  moveNextPage1(){
+    this.navCtrl.push(NextPage);
+  }
+
+  moveNextPage2(){
+    this.app.getRootNavs()[0].push(NextPage);
+  }
+  
+}
+```
+morePage 클래스의 constructor에 넘어오는 navController객체는 현재 페이지의 navController로 동일한 레벨의 페이지에 관한 정보만을 갖고있다.
+하단 tabs가 사라진 페이지로 가기 위해서는 navController객체 array 중 제일 처음 생성된 NavController에서 push를 해야한다.
+
+
+
+
+
 
