@@ -24,3 +24,7 @@ providers: [
 ...
 
 ```
+entryComponents에 선언된 class의 객체는 필요시 자동으로 생성되며 둘 이상 생성되기도 함.
+Providers에 선언된 class객체는 앱 구동 시 하나 생성되며, 다른 객체에서 접근 가능하다.
+이와 같은 provider객체의 생성은 DI( Dependency Injection )이라고 부른다.
+MyCustomProvider와 같이 만들어서 사용하는 provider은 반드시 app.module.ts파일에 privoders 섹션에 추가해야 사용 가능하다.
