@@ -203,8 +203,36 @@ export class MorePage{
 morePage 클래스의 constructor에 넘어오는 navController객체는 현재 페이지의 navController로 동일한 레벨의 페이지에 관한 정보만을 갖고있다.
 하단 tabs가 사라진 페이지로 가기 위해서는 navController객체 array 중 제일 처음 생성된 NavController에서 push를 해야한다.
 
+## NavController with Params
+1. 새로운 페이지에서 push로 다음 페이지로 이동하며 넘기는 경우
+페이지를 이동할 때 파라미터를 전달할 수 있다.
 
+```
+home.ts
 
+export class HomePage{
+  input;
+  
+  moveToNextPage(){
+    this.navCtrl.push(NextPage, { number:this.input });
+  }
+}
 
+next.ts
+
+export class NextPage{
+  number:number;
+  
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+  ){
+    this.number = navParams.get('number');
+  }
+}
+
+```
+
+2.push한 페이지에서 pop을 통해 되돌아 가면서 파라미터를 넘기는 경우
 
 
