@@ -75,3 +75,6 @@ home.html
 </ion-header>
 ...
 ```
+
+모든 앱에서 공통으로 사용되는 작업이나 데이터에 대해 provider를 통해 코드의 재사용상을 높이고 코드 관리를 쉽게 할 수 있다.
+특히 data consistency가 된다.
