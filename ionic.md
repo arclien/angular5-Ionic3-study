@@ -19,7 +19,7 @@ entryComponents: [
 providers: [
   StatusBar,
   SplashScreen,
-  MyCustomProvider,
+  MyCustomDataProvider,
 ]
 ...
 
@@ -27,4 +27,51 @@ providers: [
 entryComponents에 선언된 class의 객체는 필요시 자동으로 생성되며 둘 이상 생성되기도 함.
 Providers에 선언된 class객체는 앱 구동 시 하나 생성되며, 다른 객체에서 접근 가능하다.
 이와 같은 provider객체의 생성은 DI( Dependency Injection )이라고 부른다.
-MyCustomProvider와 같이 만들어서 사용하는 provider은 반드시 app.module.ts파일에 privoders 섹션에 추가해야 사용 가능하다.
+MyCustomDataProvider와 같이 만들어서 사용하는 provider은 반드시 app.module.ts파일에 privoders 섹션에 추가해야 사용 가능하다.
+
+
+```
+my-custom-data.ts
+...
+@Injectable()
+export class MyCustomDataProvider{
+
+  myData:string = "Sin Prisa Pero Sin Pausa";
+  
+  constructor(){
+    console.log("It's raining");
+  }
+  
+  getMyData(){
+    return this.myData;
+  }
+}
+...
+```
+@Injectable 데코레이터를 통해 DI를 정의해준다.
+앱 구동 시 생성되는 Provider 객체는 각 페이지의 constructor 파라미터로 받는다.
+
+```
+home.ts
+...
+export class HomePage{
+  myData:string;
+  constructor(
+    public navCtrl: NavController,
+    myCustomDataProvider: MyCustomDataProvider
+  ){
+    this.myData = myCustomDataProvider.getMyData();
+  }
+}
+...
+```
+```
+home.html
+...
+<ion-header>
+  <ion-navbar>
+    <ion-title> {{myData}} </ion-title>
+  </ion-navbar>
+</ion-header>
+...
+```
