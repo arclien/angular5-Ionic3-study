@@ -66,4 +66,33 @@ doInfinite(infiniteScroll) {
 ```
 
 ## NgZone
+Angular에서 관리하는 이벤트의 경우에는 two way binding을 통해서 화면 업데이트가 가능하다. cordova plugin이나 서버통신과 같이 외부로부터 비동기적으로 받는 이벤트의 발생 후에 화면 변경을 해야하는 경우 NgZone을 사용한다.
+NgZone은 Angular 모듈이 change Detection을 수행하도록 한다.
+```
+this.ngZone.run(()=>{
+  this.changeThisPlz = JSON.stringify(msg);
+});
+```
 
+## 이벤트
+```
+
+import { Events } from 'ionic-angular';
+
+// first page (publish an event when a user is created)
+constructor(public events: Events) {}
+createUser(user) {
+  console.log('User created!')
+  this.events.publish('user:created', user, Date.now());
+}
+
+
+// second page (listen for the user created event after function is called)
+constructor(public events: Events) {
+  events.subscribe('user:created', (user, time) => {
+    // user and time are the same arguments passed in `events.publish(user, time)`
+    console.log('Welcome', user, 'at', time);
+  });
+}
+
+```
