@@ -64,3 +64,6 @@ doInfinite(infiniteScroll) {
   }, 500);
 }
 ```
+
+## NgZone
+
