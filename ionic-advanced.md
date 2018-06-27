@@ -30,3 +30,37 @@ categoryChange(category){
   // change menu
 }
 ```
+
+## Infinite Scroll
+[참고](https://ionicframework.com/docs/api/components/infinite-scroll/InfiniteScroll/)
+
+The Infinite Scroll allows you to perform an action when the user scrolls a specified distance from the bottom or top of the page.
+
+```
+
+<ion-content>
+
+ <ion-list>
+   <ion-item *ngFor="let i of items">{{i}}</ion-item>
+ </ion-list>
+
+ <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+   <ion-infinite-scroll-content></ion-infinite-scroll-content>
+ </ion-infinite-scroll>
+
+</ion-content>
+```
+```
+doInfinite(infiniteScroll) {
+  console.log('Begin async operation');
+
+  setTimeout(() => {
+    for (let i = 0; i < 30; i++) {
+      this.items.push( this.items.length );
+    }
+
+    console.log('Async operation has ended');
+    infiniteScroll.complete();
+  }, 500);
+}
+```
