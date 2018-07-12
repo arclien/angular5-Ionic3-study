@@ -23,14 +23,7 @@ npm install jquery@1.12.4 // 1.12.4버전의 jquery를 설치한다.
 package.json이 없이 특정 폴더에서 위 처럼 설치를 하면 터미널에 WARN과 package.json파일이 없다고 나온다.
 WARN이라 설치는 정상적으로 되었다.
 위 커맨드를 실행한 폴더 하위에 node_modules이라는 폴더가 생성되고 jquery패키지가 설치된다.
-
-├─폴더
-│  │  package.json
-│  ├─ node_modules
-│  │  │       
-│  │  └─ jquery
-│  │      ├─ src    ==> jquery 소스 전체가 있다
-│  │      └─ dist   ==> 배포영(distribution)용 소스가 있다.
+jquery 폴더를 보면 src와 dist폴더가 있고, src에는 jquery 소스전체가 있고 dist(distribution)폴더에는 배포용 소스가 있다.
 
 
 
