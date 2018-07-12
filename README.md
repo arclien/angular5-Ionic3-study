@@ -1,5 +1,11 @@
 # angular5-study
 
+## 앵귤러/리액트 사용하는 이유?
+- 우선 각각 장단점, 목적이 다름.
+- 프론트에서 하는게 많아져서 순수 JS, jQuery로 짜는데 한계가 생김. 코드 복잡해짐. 유지보수 힘듬
+- Angular, React는 SPA(Single Page Application) 개발을 위한 프레임워크. // React는 라이브러리
+- 프론트 코드(js,html,css,assets)등의 패턴화. 구조화. 컴포넌트 재사용. 아키텍쳐등을 위해 사용.
+
 ## Lists
 - Typescript & ES6 Javascript.
   - [Quickstart 정리문서](https://docs.google.com/document/d/1F4xYbzDvnWzuLeVn6yTZ4ZuuQwsBP4InCjNWEEHWP2o/edit)
