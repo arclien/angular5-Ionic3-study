@@ -14,6 +14,8 @@ Node Package Manager이며 Node.js에서 기본으로 사용하는 패키지 관
 - npm uninstall <패키지명> : 설치된 패키지 삭제.
 - npm list : 현재 설치된 패지키 목록을 트리 형태로 보여줌
 - npm run : package.json의 scripts에 선언된 명령을 수행.
+- npm install -g : 글로벌 패키지에 추가하여, 현재 cli 폴더의 node_modules폴더가 아닌, 글로벌 폴더에 패키지를 설치하여 모든 프로젝트에서 사용 가능하다.
+- npg install -save : dependencies 에 추가된다.
 
 ### NPM 실습
 ```
@@ -22,6 +24,7 @@ npm install jquery@1.12.4 // 1.12.4버전의 jquery를 설치한다.
 ```
 package.json이 없이 특정 폴더에서 위 처럼 설치를 하면 터미널에 WARN과 package.json파일이 없다고 나온다.
 WARN이라 설치는 정상적으로 되었다.
+
 위 커맨드를 실행한 폴더 하위에 node_modules이라는 폴더가 생성되고 jquery패키지가 설치된다.
 jquery 폴더를 보면 src와 dist폴더가 있고, src에는 jquery 소스전체가 있고 dist(distribution)폴더에는 배포용 소스가 있다.
 
