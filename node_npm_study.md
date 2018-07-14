@@ -28,6 +28,62 @@ WARN이라 설치는 정상적으로 되었다.
 위 커맨드를 실행한 폴더 하위에 node_modules이라는 폴더가 생성되고 jquery패키지가 설치된다.
 jquery 폴더를 보면 src와 dist폴더가 있고, src에는 jquery 소스전체가 있고 dist(distribution)폴더에는 배포용 소스가 있다.
 
+### package.json
+```
+{
+  "name": "Jay",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "^5.0.0",
+    "@angular/common": "^5.0.0",
+    "@angular/compiler": "^5.0.0",
+    "@angular/core": "^5.0.0",
+    "@angular/forms": "^5.0.0",
+    "@angular/http": "^5.0.0",
+    "@angular/platform-browser": "^5.0.0",
+    "@angular/platform-browser-dynamic": "^5.0.0",
+    "@angular/router": "^5.0.0",
+    "core-js": "^2.4.1",
+    "jquery": "^3.3.1",
+    "rxjs": "^5.5.2",
+    "zone.js": "^0.8.14"
+  },
+  "devDependencies": {
+    "@angular/cli": "1.5.0",
+    "@angular/compiler-cli": "^5.0.0",
+    "@angular/language-service": "^5.0.0",
+    "@types/jasmine": "~2.5.53",
+    "@types/jasminewd2": "~2.0.2",
+    "@types/node": "~6.0.60",
+    "codelyzer": "~3.2.0",
+    "jasmine-core": "~2.6.2",
+    "jasmine-spec-reporter": "~4.1.0",
+    "karma": "~1.7.0",
+    "karma-chrome-launcher": "~2.1.1",
+    "karma-cli": "~1.0.1",
+    "karma-coverage-istanbul-reporter": "^1.2.1",
+    "karma-jasmine": "~1.1.0",
+    "karma-jasmine-html-reporter": "^0.2.2",
+    "protractor": "~5.1.2",
+    "ts-node": "~3.2.0",
+    "tslint": "~5.7.0",
+    "typescript": "~2.4.2"
+  }
+}
+```
+- scripts : 프로젝트에서 실행할 커맨드들을 세팅하여 사용 가능하다. 특정 커맨드에 특정 스크립트 파일을 실행하게 한다거나, 실행 순서등등을 정의 할 수 있다.
+- dependencies : 프로젝트에서 여러가지 패키지들을 사용(의존)한다. 오픈소스 패키지들이라서 버전이 계속 변하고 관리하기 힘들게 된다. package.json의 dependencies를 통해서 각 패키지들의 버전을 기록하고 해당 프로젝트에 맞게 버전을 기록하여, 새로운 버전에 대해 대처를 할 수 있게 한다. (실제로 프로젝트 진행하면서 moment 버전이 너무 빨리 변하며 deprecated된 함수가 많아서 문제가 생겨서, 버전업을 막은 경우도 있다 )
+- devDependencies : 개발 환경에서만 의존하는 패키지를 정의한다. 실제 배포하기전에만 사용하는 웹팩을 넣어두고, 컴파일 후 실제 환경에는 컴파일 된 파일만 올리므로 웹팩은 dev에 넣는다.
 
 
 # brew
