@@ -129,6 +129,68 @@ export interface Component extends Directive
     <ng-container *ngSwitchDefault>힝구</ng-container>
 </span>
 ```
+## Attribute Directive
+- 속성 지시자는 DOM의 모습이나 동작을 조작하는 데 사용
+```
+<div [class.show]="isVisible"> 헬로우 </div>
+// isVisible 멤버변수가 true일 경우 위 div에 show라는 클래스를 추가하고, 그렇지 않은 경우 아무런 클래스를 추가하지 않는다.
+```
+```
+<div [ngClass]="classObj"> 헬로우 </div>
+// classObj = {'test-class':true, 'your-class':0,test:true }
+// classObj객체의 각 키 값이 참인 경우에만 클래스 속성에 반영된다. 그러므로 최종 클래스는 다음과 같다.
+// <div class="test-class test"> 헬로우 </div>
+```
+
+# Pipe
+- 파이프는 뷰에 노출될 데이터를 변환 및 가공할 때 사용
+- 앵귤러에서 제공하는 파이프는 DatePipe, UpperCasePipe, LowerCasePipe,  CurrencyPipe, PercentPipe 등이 있다
+```
+<p name="member-name"> {{ myName | uppercase }} </p>
+//myName에 있는 문자가 모두 uppercase로 나온다
+```
+
+- Custom Pipe
+```
+//HonorPipe
+import { Pipe, PipeTransform } from '@angular/core';
+
+@pipe({ name: 'honor' })
+export class HonorPipe implements PipeTransform {
+    transform(value: string): string {
+        return `${value}님`;
+    }
+}
+
+<p name="member-name"> {{ myName | uppercase | honor }} </p>
+//myName에 있는 문자가 모두 'uppercase'님 으로 나온다
+```
+
+```
+//GeekMarkerPipe
+import { Pipe, PipeTransform } from '@angular/core';
+
+@pipe({ name: 'honor' })
+export class GeekMarkerPipe implements PipeTransform {
+    transform(value: string, level: string): string {
+        switch (level) {
+            case 'A':
+                return `Oh Geek! ${value}`;
+            case 'I':
+                return `Good Man! ${value}`;
+            case 'B':
+            default :
+                return `힝구! ${value}`;
+        }
+    }
+}
+
+<p name="member-name"> {{ myName | uppercase | honor }} </p>
+<p name="member-name"> {{ myName | uppercase | honor | geekMark }} </p>
+<p name="member-name"> {{ myName | uppercase | honor | geekMark:'A' }} </p>
+
+```
+
 
 
 
