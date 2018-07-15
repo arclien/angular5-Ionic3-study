@@ -79,7 +79,56 @@ export class AppModule
 - 이미지 ref : [앵귤러 첫걸음(Angular for beginers), Hanbit Media | 한빛미디어](https://www.slideshare.net/mediahanbit/angular-for-beginers)
 
 
+# directive
+- 컴포넌트는 사실 directive이다.
+- Component 데코레이터를 CMD+클릭 하여 보면 아래와 같이 Component는 Directive를 상속받는 인터페이스이다.
+```
+export interface Component extends Directive
+```
+- Component는 뷰를 구성할 정보를 갖고, 실제 뷰를 렌더링할 템플렛 정보를 포함한 특별한 Directive이다.
+- Component는 다른 컴포넌트를 자식으로 가질 수 있으나, Directive는 뷰가 없기 때문에 컴포넌트를 자식으로 가질 수 없다.
+- 즉, Directive는 Component와 다르게 뷰가 없지만, DOM을 관리하는 요소이다. 
+- Component + View = Directive
 
+## Structure Directive
+- ngIf
+```
+<div *ngIf="isShow; else hiding"> Show </div>
+<ng-template #hiding>
+    <div> Hidden Div </div>
+</ng-template>
+```
+- isShow가 true일 경우 상단에 있는 div가 보이고, false일 경우 하단의 div가 보인다.
+- 여기에서 보인다는 의미는, DOM tree에 삽입이 된다는 뜻이며, 모든 div가 삽입 된 후 show/hide를 시키는게 아니라, 애초에 하나의 div만 DOM에 삽입되어 보인다.
+
+- ngFor
+```
+// animals=['dog','cat','monkey','cow'];
+<ul>
+    <li *ngFor="let animal of animals; let idx = index">{{idx+1}} {{animal}}</li>
+</ul>
+```
+
+- ngSwitch
+```
+<span [ngSwitch] = "animal">
+    <span *ngSwitchCase="'dog'">멍멍</span>
+    <span *ngSwitchCase="'cat'">뮤</span>
+    <span *ngSwitchCase="'monkey'">끼룩</span>
+    <span *ngSwitchDefault>힝구</span>
+</span>
+```
+- ngContainer
+    - 위의 예제들과 같이 DOM트리를 동적으로 사용하다보면 불필요한 Dummy HTML Element를 사용하게 된다.
+    - ng-container태그를 사용하면 앵귤러가 DOM 트리에 포함시키지 않고 그 안의 내용만 뷰에 포함시킨다.
+```
+<span [ngSwitch] = "animal">
+    <ng-container *ngSwitchCase="'dog'">멍멍</ng-container>
+    <ng-container *ngSwitchCase="'cat'">뮤</ng-container>
+    <ng-container *ngSwitchCase="'monkey'">끼룩</ng-container>
+    <ng-container *ngSwitchDefault>힝구</ng-container>
+</span>
+```
 
 
 
