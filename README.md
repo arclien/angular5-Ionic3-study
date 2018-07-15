@@ -24,7 +24,9 @@ cd hello-angular
 
 ### ng serve
 프로젝트를 로컬에서 개발 환경으로 실행하는 명령. 
+
 웹 서버 구동 후 Webpack을 통해 소스를 번들링.
+
 localhost:4200에서 확인가능.
 
 
