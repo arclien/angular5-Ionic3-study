@@ -69,6 +69,17 @@ export class AppModule
 - 이렇게 NgModule의 declarations, bootstrap에 컴포넌트를 반드시 등록하는 이유는, 이를 통해 앵귤러가 앵귤르 프레임워크에 작성한 코드를 해석해서 자바스크립트 코드로 변환하기 때문이다.
 
 # Template
+- 컴포넌트의 뷰를 구성하는 정보( HTML, 앵귤러 문법으로 작성 )
+- 컴포넌트는 템플릿을 기반으로 뷰에 데이터를 전달.
+- 컴포넌트는 템플릿을 기반으로 사용자의 이벤트에 로직을 수행.
+- 컴포넌트와 뷰 사이의 상호작용은 템플릿에 작성한 '바인딩'으로 이루어진다.
+
+## 데이터 바인딩
+![데이터 바인딩](angular-for-beginers-57-638.jpg)
+- 이미지 ref : [앵귤러 첫걸음(Angular for beginers), Hanbit Media | 한빛미디어](https://www.slideshare.net/mediahanbit/angular-for-beginers)
+
+
+
 
 
 
