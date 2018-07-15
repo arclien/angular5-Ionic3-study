@@ -6,6 +6,30 @@
 - Angular, React는 SPA(Single Page Application) 개발을 위한 프레임워크. // React는 라이브러리
 - 프론트 코드(js,html,css,assets)등의 패턴화. 구조화. 컴포넌트 재사용. 아키텍쳐등을 위해 사용.
 
+### ng new
+```
+ng new hello-angular
+cd hello-angular
+```
+
+앵귤러 CLI로 프로젝트를 만들면 기본 스켈레톤 폴더가 생긴다.
+- e2e 폴더 : End-to-End의미. protractor라는 툴을 사용하여 브라우저에서 테스트할 코드가 있다.
+- src 폴더 : 실제 코드
+- .angluar-cli.json : angular-cli에서 사용할 설정 정보
+- karma.conf.js : Karma라는 단위테스트 도구 설정
+- protractor.conf.js : e2e 통합 테스트를 위한 설정
+- tslint.json : 타입스크립트용 구문 체크 설정
+- tsconfig.json : 타입스크립트 컴파일 설정
+- src/typings.d.ts : 타입스크립트에서 사용할 타입 선언 정보
+
+### ng serve
+프로젝트를 로컬에서 개발 환경으로 실행하는 명령. 
+웹 서버 구동 후 Webpack을 통해 소스를 번들링.
+localhost:4200에서 확인가능.
+
+
+
+
 ## Lists
 - Typescript & ES6 Javascript.
   - [Quickstart 정리문서](https://docs.google.com/document/d/1F4xYbzDvnWzuLeVn6yTZ4ZuuQwsBP4InCjNWEEHWP2o/edit)
