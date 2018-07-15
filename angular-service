@@ -1,0 +1,6 @@
+# Service? why?
+- 컴포넌트에서 비즈니스 로직을 분리
+- 뷰, 컴포넌트에 관련 없이 애플리케이션 전역에서 사용 가능 => 반복 코드 줄임
+- 서비스를 만들어서 필요한 컴포넌트에 dependency injection 시킴 by service method call
+
+## service 생성과 사용
